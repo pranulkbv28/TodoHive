@@ -3,6 +3,9 @@ body{
     width: 100vw;
     font-family: 'Patrick Hand SC';
 }
+.d-none{
+    display: none;
+}
 .navbar{
     background-color: rgba(255, 255, 0, 0.395);
     text-align: center;
@@ -37,15 +40,17 @@ body{
     padding: 0 12px;
 }
 .task-add svg{
-    /* border: none; */
-    /* padding: 6px 12px; */
-    /* border-radius: 6px; */
-    transition: 0.2s ease;
+    cursor: pointer;
+    transition: rotate, 0.2s ease;
+    /* transition: rotate, 5s ease; */
     fill: rgba(0, 0, 0, 0.451);
 }
 .task-add svg:hover{
     transform: scale(1.1);
     fill: black;
+}
+.task-add svg:active{
+    transform: rotate(90deg);
 }
 .task-info{
     width: 30%;
@@ -69,7 +74,6 @@ body{
 }
 .task-info-flex{
     display: flex;
-    /* align-items: center; */
     gap: 6px;
 }
 #to-add{    

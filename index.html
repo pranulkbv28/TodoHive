@@ -18,14 +18,9 @@
                     <img class="logo-img" src="assets/logo.png" alt="logo">
                 </a>
             </div>
-            <!-- <div class="menu">
 
-            </div> -->
         </div>
-        
-        <!-- <h1 class="title-text">
-            Welcome To <span class="title-name">TodoHive</span><img src="" alt="" class="title-img">
-        </h1> -->
+        </div>
     </header>
     <main>
         <h1 class="main-header">Mention the task you want to tick-off for today <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
@@ -36,12 +31,17 @@
         <section class="todo-container">
             <div class="task-add">
                 <h2>Click here to add your task</h2>
-                <!-- <button>Add Task</button> -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="yellow" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                </svg>
+                <div onclick="showTaskInfo()">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="yellow" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                    </svg>
+                </div>
             </div>
-            <div class="task-info">
+
+
+            <!-- Element that takes in the task' info -->
+            <!-- begin -->
+            <div id="showTaskAdd" class="task-info d-none">
                 <p>Add Task:</p>
                 <div class="task-info-container">
                     <label for="task-data">Enter the Task:</label><br>
@@ -59,8 +59,12 @@
                     </div>
                 </div>
             </div>
+            <!-- end -->
+
+
+
         </section>
     </main>
-
 </body>
+<script src="./app.js"></script>
 </html>
