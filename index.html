@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Homemade+Apple">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/logo.avif" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoHive</title>
+</head>
+<body>
+    <header class="title">
+        <div class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img class="logo-img" src="assets/logo.png" alt="logo">
+                </a>
+            </div>
+            <!-- <div class="menu">
+
+            </div> -->
+        </div>
+        
+        <!-- <h1 class="title-text">
+            Welcome To <span class="title-name">TodoHive</span><img src="" alt="" class="title-img">
+        </h1> -->
+    </header>
+    <main>
+        <h1 class="main-header">Mention the task you want to tick-off for today <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </h1>
+        <section class="todo-container">
+            <div class="task-add">
+                <h2>Click here to add your task</h2>
+                <!-- <button>Add Task</button> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="yellow" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                </svg>
+            </div>
+            <div class="task-info">
+                <p>Add Task:</p>
+                <div class="task-info-container">
+                    <label for="task-data">Enter the Task:</label><br>
+                    <input type="text" name="task-data" id="task-data"><br>
+                    <label for="task-time">Set Completion Goal:</label><br>
+                    <div class="task-info-flex">
+                        <input type="datetime-local" name="task-time" id="task-time">
+                        <div id="to-add">
+                            <p>
+                                ADD TASK<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                            </p>                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
