@@ -23,12 +23,13 @@
         </div>
     </header>
     <main>
-        <h1 class="main-header">Mention the task you want to tick-off for today <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
-            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
-            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
-          </svg>
-        </h1>
+        
         <section class="todo-container">
+            <h1 class="main-header">Mention the task you want to tick-off for today <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+              </svg>
+            </h1>
             <div class="task-add">
                 <h2>Click here to add your task</h2>
                 <div onclick="showTaskInfo()">
@@ -42,15 +43,20 @@
             <!-- Element that takes in the task' info -->
             <!-- begin -->
             <div id="showTaskAdd" class="task-info d-none">
+                <div onclick="closeTaskInfo()" class="cross-icon">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="yellow" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                    </svg>
+                </div>
                 <p>Add Task:</p>
                 <div class="task-info-container">
                     <label for="task-data">Enter the Task:</label><br>
-                    <input type="text" name="task-data" id="task-data"><br>
+                    <input type="text" name="task-data" id="task-data" placeholder="e.g. Complete DSA"><br>
                     <label for="task-time">Set Completion Goal:</label><br>
                     <div class="task-info-flex">
                         <input type="datetime-local" name="task-time" id="task-time">
                         <div id="to-add">
-                            <p>
+                            <p onclick="addTask()">
                                 ADD TASK<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                 </svg>
@@ -62,11 +68,9 @@
             <!-- end -->
             
 
-            <!-- dummy test -->
-            <div class="task-details">
-                
-            </div>
-
+        </section>
+        <section id="addedTaskContainer">
+            
         </section>
     </main>
 </body>
