@@ -3,7 +3,6 @@ let addedTaskContainer = document.getElementById("addedTaskContainer");
 let taskData = document.getElementById("taskData");
 let taskTime = document.getElementById("taskTime");
 let body = document.getElementById("bod");
-// import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 
 
@@ -13,21 +12,15 @@ let todos = [];
 
 // to show the task adding card
 function showTaskInfo() {
-  // if(showTaskAdd.classList.contains("d-none")){
-  //     showTaskAdd.classList.remove("d-none");
-  // }
-  // else{
-  //     showTaskAdd.classList.add("d-none");
-  // }
   showTaskAdd.classList.toggle("d-none");
 }
 
 function closeTaskInfo() {
-  // console.log("Function is working");
   showTaskAdd.classList.add("d-none");
-  // test.innerText = "Changed";
 }
 
+
+// function to push task and taskTime as objects in an array
 function addTask() {
   let date = new Date(taskTime.value);
   let options = { weekday: "long", month: "long", day: "numeric" };
@@ -45,16 +38,25 @@ function addTask() {
   showTaskInfo();
   body.style.backgroundImage = "none";
   showAddedTask();
+  // testingCSS();
+
 }
 
+
+
+// showing the added tasks
 function showAddedTask() {
 
     addedTaskContainer.innerHTML=""
+
+
 
   todos.map((todo, n)=>{
     // 1st child div of the addedTaskContainer section
   let firstChildDiv = document.createElement("div");
   addedTaskContainer.appendChild(firstChildDiv);
+
+  // taskCompleted(e);
 
   // 2nd div with the class name = "taskNumber"
   let taskHead = document.createElement("div");
@@ -169,33 +171,27 @@ function showAddedTask() {
 })
 }
 
-// function to delete a task
 
-// function deleteTask(e){
-//     console.log(e);
-    
-// }
 
 // this a function to update the task numbers automatically
 
 function updateTaskIndices(){
   let taskNumberDivs = document.querySelectorAll(".taskNumber");
   taskNumberDivs.forEach((taskNumberDiv, index)=>{
-    // console.log(taskNumberDiv, index);
     let toUpdateIndex = taskNumberDiv.querySelector('label');
     toUpdateIndex.innerText = "Task" + (index+1) 
   }) 
 }
 
 
-function taskCompleted(){
-  // confetti()
-  taskCompletedDivs = document.querySelectorAll("#addedTaskContainer>div");
-  console.log(taskCompletedDivs);
-  taskCompletedDivs.forEach((taskCompletedDiv)=>{
-      let completedDiv = taskCompletedDiv.classList.add("completed");
-      completedButton = taskCompletedDiv.querySelector("button")
+
+
+// function to style tasks as they have been completed
+function taskCompleted(e) {
+  let completedButton = e.target;
+  let parentFirstChildDiv = completedButton.parentElement.parentElement;
+ 
+      parentFirstChildDiv.classList.add("completed");
       completedButton.style.backgroundColor = "lightgray";
       completedButton.innerText = "Task Completed!!!";
-  })
-}
+  }
