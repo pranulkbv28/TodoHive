@@ -184,14 +184,11 @@ function updateTaskIndices(){
 }
 
 
-function taskCompleted(){
-  // confetti()
-  taskCompletedDivs = document.querySelectorAll("#addedTaskContainer>div");
-  console.log(taskCompletedDivs);
-  taskCompletedDivs.forEach((taskCompletedDiv)=>{
-      let completedDiv = taskCompletedDiv.classList.add("completed");
-      completedButton = taskCompletedDiv.querySelector("button")
-      completedButton.style.backgroundColor = "lightgray";
-      completedButton.innerText = "Task Completed!!!";
-  })
+function taskCompleted(e){
+  
+  let completedButton = e.target;
+  let parentFirstChildDiv = completedButton.parentElement.parentElement;
+  parentFirstChildDiv.classList.add("completed");
+  completedButton.style.backgroundColor = "lightgray";
+  completedButton.innerText = "Task Completed!!!";
 }
