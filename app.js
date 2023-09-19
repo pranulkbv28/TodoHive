@@ -3,6 +3,11 @@ let addedTaskContainer = document.getElementById("addedTaskContainer");
 let taskData = document.getElementById("taskData");
 let taskTime = document.getElementById("taskTime");
 let body = document.getElementById("bod");
+// import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
+
+
+
 
 let todos = [];
 
@@ -70,6 +75,19 @@ function showAddedTask() {
   let editDiv = document.createElement("div");
   editDiv.classList.add("editDelete");
   taskChanges.appendChild(editDiv);
+  
+  // to edit a task
+  editDiv.addEventListener('click', function(){
+    newTaskDetails = prompt("Enter New Task");
+    // console.log(newTaskDetails);
+     
+    todos[n].task = newTaskDetails;
+
+    taskDeet.innerText = todos[n].task;
+  })
+
+
+
 
   // creating the edit svg
   let editSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -91,6 +109,16 @@ function showAddedTask() {
   let deleteDiv = document.createElement("div");
   deleteDiv.classList.add("editDelete");
   taskChanges.appendChild(deleteDiv);
+
+  // to delete the task
+  deleteDiv.addEventListener('click', function(){
+    addedTaskContainer.removeChild(firstChildDiv);
+
+    // to remove from the array
+    todos.splice(n,1);
+
+    updateTaskIndices();
+  })
 
   // creating the delete svg
   let deleteSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -123,5 +151,51 @@ function showAddedTask() {
   taskTimeTaken.classList.add("taskSetTime");
   taskTimeTaken.innerText = todo.dueDate;
   firstChildDiv.appendChild(taskTimeTaken);
+  
+  // creating button div
+  let buttonDiv = document.createElement("div");
+  buttonDiv.classList.add("button-container");
+  firstChildDiv.appendChild(buttonDiv);
+
+  // creating button
+  let btn = document.createElement("button");
+  btn.innerText = "Comleted the task?"
+  btn.classList.add("btn")
+  buttonDiv.appendChild(btn);
+
+  btn.addEventListener('click', taskCompleted);
+
+
+})
+}
+
+// function to delete a task
+
+// function deleteTask(e){
+//     console.log(e);
+    
+// }
+
+// this a function to update the task numbers automatically
+
+function updateTaskIndices(){
+  let taskNumberDivs = document.querySelectorAll(".taskNumber");
+  taskNumberDivs.forEach((taskNumberDiv, index)=>{
+    // console.log(taskNumberDiv, index);
+    let toUpdateIndex = taskNumberDiv.querySelector('label');
+    toUpdateIndex.innerText = "Task" + (index+1) 
+  }) 
+}
+
+
+function taskCompleted(){
+  // confetti()
+  taskCompletedDivs = document.querySelectorAll("#addedTaskContainer>div");
+  console.log(taskCompletedDivs);
+  taskCompletedDivs.forEach((taskCompletedDiv)=>{
+      let completedDiv = taskCompletedDiv.classList.add("completed");
+      completedButton = taskCompletedDiv.querySelector("button")
+      completedButton.style.backgroundColor = "lightgray";
+      completedButton.innerText = "Task Completed!!!";
   })
 }

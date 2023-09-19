@@ -150,6 +150,12 @@ main{
     box-sizing: border-box;
     margin: 0 auto 20px;
 }
+.completed{
+    text-decoration: line-through;
+    background-color: lightgray;
+    border-color: lightgray;
+    color: lightgray;
+}
 .taskNumber{
     /* margin-top: 20px; */
     display: flex;
@@ -187,3 +193,21 @@ main{
 .taskSetTime{
     color: gray;
 }
+.button-container{
+    text-align: center;
+    margin: 30px 0 0 0 ;
+}
+.btn{
+    font-family: 'Patrick Hand SC';
+    width: 50%;
+    font-size: 18px;
+    background-color: rgba(105, 239, 105, 0.607);
+    /* background-color: lightgray; */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* color: white; */
+}
+/* #btn:active ~ #addeddTaskContainer>div{
+    background-color: black;
+} */
